@@ -1,0 +1,20 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Solution	ZigZagConversion.cc	/^class Solution {$/;"	c	file:
+TreeNode	levelOrdeBinaryTree.c	/^struct TreeNode {$/;"	s	file:
+calculateDepth	levelOrdeBinaryTree.c	/^int calculateDepth(struct TreeNode *tree) {$/;"	f
+convert	ZigZagConversion.cc	/^       string convert(string s, int numRows) {$/;"	f	class:Solution
+getVal	levelOrdeBinaryTree.c	/^int getVal(struct TreeNode *tree, int level, int **result, int **columnSizes) {$/;"	f
+left	levelOrdeBinaryTree.c	/^    struct TreeNode *left;$/;"	m	struct:TreeNode	typeref:struct:TreeNode::TreeNode	file:
+levelOrder	levelOrdeBinaryTree.c	/^int** levelOrder(struct TreeNode* root, int** columnSizes, int* returnSize) {$/;"	f
+main	3Sum.cc	/^int main() {$/;"	f
+main	ZigZagConversion.cc	/^int main() {$/;"	f
+main	levelOrdeBinaryTree.c	/^int main() {$/;"	f
+right	levelOrdeBinaryTree.c	/^    struct TreeNode *right;$/;"	m	struct:TreeNode	typeref:struct:TreeNode::TreeNode	file:
+sortv	3Sum.cc	/^void sortv(vector<int> &vec) {$/;"	f
+threeSum	3Sum.cc	/^vector<vector<int> > threeSum(vector<int>& nums) {$/;"	f
+val	levelOrdeBinaryTree.c	/^    int val;$/;"	m	struct:TreeNode	file:
