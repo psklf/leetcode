@@ -5,16 +5,30 @@
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
 Solution	ZigZagConversion.cc	/^class Solution {$/;"	c	file:
+TreeNode	binaryTreePreorderTraversal.c	/^struct TreeNode {$/;"	s	file:
 TreeNode	levelOrdeBinaryTree.c	/^struct TreeNode {$/;"	s	file:
+TreeNode	minimumDepthBInaryTree.c	/^struct TreeNode {$/;"	s	file:
+Ztree	binaryTreePreorderTraversal.c	/^typedef struct TreeNode Ztree;$/;"	t	typeref:struct:TreeNode	file:
+add2array	binaryTreePreorderTraversal.c	/^void add2array(int **array_ptr, int data, int size) {$/;"	f
 calculateDepth	levelOrdeBinaryTree.c	/^int calculateDepth(struct TreeNode *tree) {$/;"	f
 convert	ZigZagConversion.cc	/^       string convert(string s, int numRows) {$/;"	f	class:Solution
 getVal	levelOrdeBinaryTree.c	/^int getVal(struct TreeNode *tree, int level, int **result, int **columnSizes) {$/;"	f
+left	binaryTreePreorderTraversal.c	/^    struct TreeNode *left;$/;"	m	struct:TreeNode	typeref:struct:TreeNode::TreeNode	file:
 left	levelOrdeBinaryTree.c	/^    struct TreeNode *left;$/;"	m	struct:TreeNode	typeref:struct:TreeNode::TreeNode	file:
+left	minimumDepthBInaryTree.c	/^    struct TreeNode *left;$/;"	m	struct:TreeNode	typeref:struct:TreeNode::TreeNode	file:
 levelOrder	levelOrdeBinaryTree.c	/^int** levelOrder(struct TreeNode* root, int** columnSizes, int* returnSize) {$/;"	f
 main	3Sum.cc	/^int main() {$/;"	f
 main	ZigZagConversion.cc	/^int main() {$/;"	f
+main	binaryTreePreorderTraversal.c	/^int main() {$/;"	f
 main	levelOrdeBinaryTree.c	/^int main() {$/;"	f
+main	minimumDepthBInaryTree.c	/^int main() {$/;"	f
+minDepth	minimumDepthBInaryTree.c	/^int minDepth(struct TreeNode* root) {$/;"	f
+preorderTraversal	binaryTreePreorderTraversal.c	/^int* preorderTraversal(struct TreeNode* root, int* returnSize) {$/;"	f
+right	binaryTreePreorderTraversal.c	/^    struct TreeNode *right;$/;"	m	struct:TreeNode	typeref:struct:TreeNode::TreeNode	file:
 right	levelOrdeBinaryTree.c	/^    struct TreeNode *right;$/;"	m	struct:TreeNode	typeref:struct:TreeNode::TreeNode	file:
+right	minimumDepthBInaryTree.c	/^    struct TreeNode *right;$/;"	m	struct:TreeNode	typeref:struct:TreeNode::TreeNode	file:
 sortv	3Sum.cc	/^void sortv(vector<int> &vec) {$/;"	f
 threeSum	3Sum.cc	/^vector<vector<int> > threeSum(vector<int>& nums) {$/;"	f
+val	binaryTreePreorderTraversal.c	/^    int val;$/;"	m	struct:TreeNode	file:
 val	levelOrdeBinaryTree.c	/^    int val;$/;"	m	struct:TreeNode	file:
+val	minimumDepthBInaryTree.c	/^    int val;$/;"	m	struct:TreeNode	file:
