@@ -8,8 +8,6 @@ typedef struct Lnode {
     struct Lnode *next;
 } ListNode;
 
-void insert(ListNode *preNode, ListNode *thisNode); 
-
 void appendChar(char *chars, ListNode **head);
 
 int *getLetter(char *digits, int *size);
@@ -59,7 +57,7 @@ void appendChar(char *chars, ListNode **head) {
             int i = 1;
             while (chars[i] != '\0') {
                 ListNode *thisNode = (ListNode *) malloc(sizeof(ListNode));
-            
+
                 // set new data
                 char *oldCharData = (char *) malloc(sizeof(char) * newLength);
                 memcpy(oldCharData, preNode->data, sizeof(char) * preNode->length);
@@ -156,29 +154,25 @@ char** letterCombinations(char* digits, int* returnSize) {
     ret = (char **) malloc(sizeof(char *));
 
     ListNode *tmp = head;
+    ListNode *freeNext = head->next;
     ret[0] = (char *)malloc(sizeof(char) * tmp->length);
     memcpy(ret[0], tmp->data, sizeof(char) * tmp->length);
 
-    while (tmp->next != NULL) {
-        tmp = tmp->next;
+    while (freeNext != NULL) {
+        tmp = freeNext;
+        freeNext = tmp->next;
+
         char **tmpRet = (char **) realloc(ret, sizeof(char *) * (size + 1));
         int charSize = tmp->length + 1;
         tmpRet[size] = (char *) malloc(sizeof(char) * charSize);
         memcpy(tmpRet[size], tmp->data, sizeof(char) * charSize);
         ret = tmpRet;
+
+        // Delete the Node
+        free(tmp->data);
+        free(tmp);
+
         ++size;
-    }
-
-    ListNode *freeNode = head;
-    ListNode *tmpNext = freeNode->next;
-    free(freeNode->data);
-    free(freeNode);
-    while(tmpNext != NULL) {
-        freeNode = tmpNext;
-        tmpNext = freeNode->next;
-
-    free(freeNode->data);
-    free(freeNode);
     }
 
     *returnSize = size;
