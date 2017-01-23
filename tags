@@ -6,21 +6,22 @@
 !_TAG_PROGRAM_VERSION	5.8	//
 ListNode	letterCombinations.c	/^} ListNode;$/;"	t	typeref:struct:Lnode	file:
 Lnode	letterCombinations.c	/^typedef struct Lnode {$/;"	s	file:
-Solution	ZigZagConversion.cc	/^class Solution {$/;"	c	file:
+Solution	zigZagConversion.cc	/^class Solution {$/;"	c	file:
 TreeNode	binaryTreePreorderTraversal.c	/^struct TreeNode {$/;"	s	file:
 TreeNode	levelOrdeBinaryTree.c	/^struct TreeNode {$/;"	s	file:
 TreeNode	minimumDepthBInaryTree.c	/^struct TreeNode {$/;"	s	file:
 Ztree	binaryTreePreorderTraversal.c	/^typedef struct TreeNode Ztree;$/;"	t	typeref:struct:TreeNode	file:
 add2array	binaryTreePreorderTraversal.c	/^void add2array(int **array_ptr, int data, int *size) {$/;"	f
 appendChar	letterCombinations.c	/^void appendChar(char *chars, ListNode **head) {$/;"	f
+backtrack	generateParenthese.c	/^void backtrack(char **ret, char *a, int *returnSize, int depth, int size, int left, int right) {$/;"	f
 calculateDepth	levelOrdeBinaryTree.c	/^int calculateDepth(struct TreeNode *tree) {$/;"	f
-convert	ZigZagConversion.cc	/^       string convert(string s, int numRows) {$/;"	f	class:Solution
+convert	zigZagConversion.cc	/^       string convert(string s, int numRows) {$/;"	f	class:Solution
 data	letterCombinations.c	/^    char *data;$/;"	m	struct:Lnode	file:
+generateParenthesis	generateParenthese.c	/^char** generateParenthesis(int n, int* returnSize) {$/;"	f
 getLetter	letterCombinations.c	/^int *getLetter(char *digits, int *size) {$/;"	f
 getVal	binaryTreePreorderTraversal.c	/^void getVal(Ztree *tree, int **array_ptr, int *size) {$/;"	f
 getVal	levelOrdeBinaryTree.c	/^int getVal(struct TreeNode *tree, int level, int **result, int **columnSizes) {$/;"	f
 ifDump	lengthOfLongestSubstring.c	/^int ifDump(char *s, int index, int start) {$/;"	f
-insert	letterCombinations.c	/^void insert(ListNode *preNode, ListNode *thisNode) {$/;"	f
 left	binaryTreePreorderTraversal.c	/^    struct TreeNode *left;$/;"	m	struct:TreeNode	typeref:struct:TreeNode::TreeNode	file:
 left	levelOrdeBinaryTree.c	/^    struct TreeNode *left;$/;"	m	struct:TreeNode	typeref:struct:TreeNode::TreeNode	file:
 left	minimumDepthBInaryTree.c	/^    struct TreeNode *left;$/;"	m	struct:TreeNode	typeref:struct:TreeNode::TreeNode	file:
@@ -29,12 +30,13 @@ lengthOfLongestSubstring	lengthOfLongestSubstring.c	/^int lengthOfLongestSubstri
 letterCombinations	letterCombinations.c	/^char** letterCombinations(char* digits, int* returnSize) {$/;"	f
 levelOrder	levelOrdeBinaryTree.c	/^int** levelOrder(struct TreeNode* root, int** columnSizes, int* returnSize) {$/;"	f
 main	3Sum.cc	/^int main() {$/;"	f
-main	ZigZagConversion.cc	/^int main() {$/;"	f
 main	binaryTreePreorderTraversal.c	/^int main() {$/;"	f
+main	generateParenthese.c	/^int main() {$/;"	f
 main	lengthOfLongestSubstring.c	/^int main() {$/;"	f
 main	letterCombinations.c	/^int main() {$/;"	f
 main	levelOrdeBinaryTree.c	/^int main() {$/;"	f
 main	minimumDepthBInaryTree.c	/^int main() {$/;"	f
+main	zigZagConversion.cc	/^int main() {$/;"	f
 minDepth	minimumDepthBInaryTree.c	/^int minDepth(struct TreeNode* root) {$/;"	f
 next	letterCombinations.c	/^    struct Lnode *next;$/;"	m	struct:Lnode	typeref:struct:Lnode::Lnode	file:
 preorderTraversal	binaryTreePreorderTraversal.c	/^int* preorderTraversal(struct TreeNode* root, int* returnSize) {$/;"	f
