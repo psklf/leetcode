@@ -28,7 +28,7 @@ struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2) {
     if (l1 == NULL) {
         if (l2 == NULL) {
             // both NULL
-            return thisNode;
+            return NULL;
         } else {
             rightNext = l2->next;
             firstNum = l2->val;
