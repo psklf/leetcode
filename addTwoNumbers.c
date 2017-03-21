@@ -82,7 +82,7 @@ struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2) {
         resultListNode->next = tmpNode;
         resultListNode = resultListNode->next;
     }
-    // if still has flag puls it
+    // if still has flag plus it
     if (flag) {
         ListNode *lastNode = (ListNode *) malloc(sizeof(ListNode));
         lastNode->val = 1;
