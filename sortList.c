@@ -17,6 +17,7 @@ typedef struct ListNode ListNode;
 
 ListNode *inner_sort(ListNode *head, int len);
 ListNode *merge_list(ListNode *list1, int len1, ListNode *list2, int len2);
+ListNode *merge2(ListNode *list1, ListNode *list2);
 
 struct ListNode* sortList(struct ListNode* head) {
     // get length
@@ -35,11 +36,11 @@ struct ListNode* sortList(struct ListNode* head) {
 }
 
 ListNode *inner_sort(ListNode *head, int len) {
-    if (len == 1) {
+    if (head->next == NULL) {
         return head;
     }
 
-    if (len == 2) {
+    if (head->next->next == NULL) {
         if (head->val < head->next->val) {
             return head;
         } else {
@@ -49,19 +50,54 @@ ListNode *inner_sort(ListNode *head, int len) {
             return head;
         }
     }
+
+    // split list
+
     ListNode *first;
     ListNode *second;
     first = head;
-    second = first;
-    int i = 0;
-    for (i; i < len / 2 - 1; ++i) {
-        second = second->next;
+    second = head;
+
+    while (1) {
+        first = first->next;
+        second = second->next->next;
+        if (second->next == NULL || second->next->next == NULL) {
+            break;
+        }
     }
-    ListNode *tmp = second;
-    second = second->next;
-    tmp->next = NULL;
-    ++i;
-    return merge_list(inner_sort(first, i), i, inner_sort(second, len - i), len - i);
+    ListNode *mid = first->next;
+    first->next = NULL;
+    // printf("%d %d\n", head->val, mid->val);
+        // return merge_list(inner_sort(first, i), i, inner_sort(second, len - i), len - i);
+    return merge2(inner_sort(head, 0),  inner_sort(mid, 0));
+}
+
+
+ListNode *merge2(ListNode *list1, ListNode *list2) {
+    ListNode *ret_head = (ListNode *)malloc(sizeof(ListNode));
+    ListNode *this_node = ret_head;
+    // return list2;
+
+    while (1) {
+        if (list1 == NULL) {
+            this_node->next = list2;
+            return ret_head->next;
+        }
+        if (list2 == NULL) {
+            this_node->next = list1;
+            return ret_head->next;
+        }
+        if (list1->val > list2->val) {
+            this_node->next = list2;
+            list2 = list2->next;
+
+        } else {
+
+            this_node->next = list1;
+            list1 = list1->next;
+        }
+        this_node = this_node->next;
+    }
 }
 
 ListNode *merge_list(ListNode *list1, int len1, ListNode *list2, int len2) {
@@ -154,7 +190,16 @@ int main() {
     node4->val = 15;
     node5->val = 4;
 
+    ListNode *head = (ListNode *) malloc(sizeof(ListNode));
+    ListNode *head1 = (ListNode *) malloc(sizeof(ListNode));
+    head->val = 10;
+    head->next = head1;
+
+    head1->val = 20;
+    head1->next = NULL;
+
     ListNode *main_ret = sortList(node);
+    // ListNode *main_ret = merge2(node, head);
     while (main_ret != NULL) {
         printf("Val: %d.\n", main_ret->val);
         main_ret = main_ret->next;
