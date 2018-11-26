@@ -16,7 +16,6 @@ struct ListNode {
 typedef struct ListNode ListNode;
 
 ListNode *inner_sort(ListNode *head, int len);
-ListNode *merge_list(ListNode *list1, int len1, ListNode *list2, int len2);
 ListNode *merge2(ListNode *list1, ListNode *list2);
 
 struct ListNode* sortList(struct ListNode* head) {
@@ -25,13 +24,6 @@ struct ListNode* sortList(struct ListNode* head) {
     if (head == NULL) {
         return NULL;
     }
-    ++list_length;
-    ListNode* calcu_node = head;
-    while (calcu_node->next != NULL) {
-        list_length++;
-        calcu_node = calcu_node->next;
-    }
-
     return inner_sort(head, list_length);
 }
 
@@ -100,74 +92,6 @@ ListNode *merge2(ListNode *list1, ListNode *list2) {
     }
 }
 
-ListNode *merge_list(ListNode *list1, int len1, ListNode *list2, int len2) {
-    int total_len = len1 + len2;
-    ListNode *ret_head = NULL; 
-    ListNode *this_node = ret_head;
-    for (int i = 0; i < total_len; ++i) {
-        if (list1 == NULL && list2 == NULL) {
-            break;
-        }
-        if (list1 == NULL) {
-            ListNode *tmp = list2;
-            list2 = list2->next;
-            tmp->next = NULL;
-            if (this_node != NULL) {
-                this_node->next = tmp;
-                this_node = tmp;
-            } else {
-                this_node = tmp;
-                ret_head = tmp;
-            }
-            // printf("this val : %d.\n", ret_array[i]);
-            continue;
-        }
-
-        if (list2 == NULL) {
-            ListNode *tmp = list1;
-            list1 = list1->next;
-
-            tmp->next = NULL;
-            if (this_node != NULL) {
-                this_node->next = tmp;
-                this_node = tmp;
-            } else {
-                this_node = tmp;
-                ret_head = tmp;
-            }
-            // printf("this val : %d.\n", ret_array[i]);
-            continue;
-        }
-
-        if (list1->val < list2->val) {
-            ListNode *tmp = list1;
-            list1 = list1->next;
-
-            tmp->next = NULL;
-            if (this_node != NULL) {
-                this_node->next = tmp;
-                this_node = tmp;
-            } else {
-                this_node = tmp;
-                ret_head = tmp;
-            }
-        } else {
-            ListNode *tmp = list2;
-            list2 = list2->next;
-
-            tmp->next = NULL;
-            if (this_node != NULL) {
-                this_node->next = tmp;
-                this_node = tmp;
-            } else {
-                this_node = tmp;
-                ret_head = tmp;
-            }
-        }
-    }  // end of loop
-
-    return ret_head;
-}
 
 int main() {
     ListNode *node = (ListNode *) malloc(sizeof(ListNode));

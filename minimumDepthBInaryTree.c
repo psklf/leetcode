@@ -33,9 +33,6 @@ int minDepth(struct TreeNode* root) {
     } 
 
     int left = minDepth(root->left) + 1;
-    if (left == 1) {
-        return minDepth(root->right);
-    }
 
     int right = minDepth(root->right) + 1;
     // printf("val %d; left: %d, right: %d.\n", root->val, left, right);
