@@ -20,11 +20,11 @@ class Solution {
 
     int maxLength(vector<string>& arr) {
       unsigned int len = arr.size();
-      unsigned long combine_mask = 0x1;
+      unsigned long combine_mask = pow(2, len) - 1;
       int max = 0;
-      // cout << " combine mask " << combine_mask << " upper size " << pow(2, len)<< endl;
-      while (combine_mask < pow(2, len) ){
-        // cout << " combine mask " << combine_mask << endl;
+      cout << " combine mask " << std::hex <<  combine_mask << " upper size " << pow(2, len)<< endl;
+      while (combine_mask > 0x0){
+        cout << " combine mask " << combine_mask << endl;
         // get string
         int each_len = 0;
         unsigned long word_mask = 0x0;
@@ -32,7 +32,7 @@ class Solution {
           unsigned long m = pow(2,i);
           if (m & combine_mask) {
             // cout << "m " << m << " i "<<i << endl;
-            // std::cout << "check word " << arr[i] << endl;
+            std::cout << "check word " << arr[i] << endl;
             if (checkWord(word_mask, arr[i])) {
               each_len += arr[i].size();
             } else {
@@ -40,9 +40,9 @@ class Solution {
             }
           }
         }
-        // cout << "this length is  " << each_len << endl;
+        cout << "this length is  " << each_len << endl;
         if (max < each_len) { max = each_len; }
-        combine_mask = combine_mask  + 0x1;
+        combine_mask = combine_mask - 0x1;
       }
       return max;
     }
